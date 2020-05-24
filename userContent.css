@@ -1,0 +1,79 @@
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+	margin-top:-2px;
+	margin-bottom: -2px;
+}
+
+@-moz-document url(about:newtab) {
+  /* body {
+    background-image: url("city.jpg");
+    background-color: red;
+    background-size: cover;
+    background-position: top;
+    --newtab-search-wordmark-color: #FFF !important;
+  } */
+
+  .icon-settings {
+    transition: 0.3s;
+    border-radius: 100%;
+  }
+
+  .icon-settings:hover {
+    transition: 0.3s;
+    border-radius: 100%;
+  }
+
+  /* .search-wrapper input {
+    background-color: rgb(56,56,61) !important;
+    opacity: 0.6;
+  } */
+
+
+  /* #newtab-search-text {
+    color: rgb(248,248,250) !important;
+  } */
+}
+
+/* Two column addons for html addons manager available in Firefox 68 */
+
+@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"){
+
+  :root{  overflow-x: hidden } /* Remove this if it causes horizontal scrolling problems */
+
+  @media (min-width:720px){
+    #main{ max-width: unset !important; padding-right: 28px; }
+    addon-list > section,
+    recommended-addon-list{
+      padding: 1em;
+      display: grid;
+      grid-template-areas: "hd hd" "cd cd";
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1em;
+
+    }
+
+    addon-card .card-contents{ width: unset !important; white-space: initial !important; }
+
+    .card-heading-image{ max-width: calc(100% + 32px) }
+    section > h2{ grid-area: hd }
+    addon-card{
+      padding-bottom: 0px !important;
+      padding-top: 0px !important;
+      grid-area: auto;
+    }
+    addon-card .addon-description{ max-height: 3em; scrollbar-width: thin; }
+  }
+}
+
+@-moz-document domain("www.instagram.com") {
+	.pbNvD, .fPMEg, .HYpXt {
+		background-color: tomato !important;
+	}
+}
+
+@-moz-document domain("duckduckgo.com") {
+	.result.highlight {
+		border-color: transparent !important;
+	}
+}
