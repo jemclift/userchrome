@@ -1,5 +1,6 @@
 @import "icons/icons.css";
 @import "nice-tabs.css";
+@import "urlbar_connection_type_colors.css";
 
 /* Scrolling Bookmarks */
 /* Adapted from: https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/multi-row_bookmarks.css */
@@ -110,7 +111,7 @@
 
 /* Rounded Bookmarks */
 
-#navigator-toolbox .bookmark-item, #PlacesChevron{
+#navigator-toolbox .bookmark-item:not(menuitem), #PlacesChevron{
 	border-radius: 99px !important;
 	transition-duration: .1s !important;
 }
@@ -151,19 +152,20 @@
 /* New-tab button styling */
 
 #tabs-newtab-button .toolbarbutton-icon {
-	background-color: rgba(256,256,256,0.1) !important;
+	/* background-color: rgba(256,256,256,0.1) !important; */
+	background-color: var(--tab-line-color) !important;
 	border-radius: 99px !important;
 	transition: 0.1s !important;
-}
-
-#tabs-newtab-button {
-	padding-left: 5px !important;
-	padding-right: 5px !important;
 }
 
 #tabs-newtab-button:hover .toolbarbutton-icon {
 	/* background-color: rgba(256,256,256,0.2) !important; */
 	background-color: var(--tab-line-color) !important;
+}
+
+#tabs-newtab-button {
+	padding-left: 5px !important;
+	padding-right: 5px !important;
 }
 
 /* Custom tooltip style */
@@ -184,9 +186,9 @@ tooltip {
 
 /* Line between toolbox and the content */
 
-#PersonalToolbar {
+/* #PersonalToolbar {
   margin-bottom: -0.5px;
-}
+} */
 
 /* Hide search dropdown */
 
@@ -282,4 +284,16 @@ toolbarbutton#support_lastpass_com-browser-action  {
 #urlbar .search-one-offs:not([hidden]) {
   padding-block: 0px !important;
 	padding: 5px !important;
+}
+
+/* Removes 'This time, search with' text */
+
+.search-panel-one-offs-header {
+	display: none !important;
+}
+
+/* Removes all toolbar button badges */
+
+.toolbarbutton-badge {
+	display: none !important;
 }

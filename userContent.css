@@ -16,8 +16,25 @@ input::-moz-focus-inner {
   }
 }
 
+@-moz-document url("moz-extension://4b88bb80-eaf9-9744-8313-3ce43a0a2bee/vault.html") {
+	#ad {
+		display: none !important
+	}
+
+	.freeUser .leftOfAd {
+	  right: 0px !important;
+	}
+
+	.folderWrapper > div, .stickyFoldersContainer {
+		margin: 0 30px 24px !important;
+	}
+
+	#options {
+		padding: 12px 30px 0 !important;
+	}
+}
+
 @-moz-document url(about:newtab) {
-/ */
 
 	/* .top-site-outer .top-site-icon {
     box-shadow: 0 !important;

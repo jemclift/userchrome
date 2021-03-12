@@ -7,6 +7,7 @@ Thanks for using my file */
 /* -------------------- 🎨 Customization 🎨 -------------------- */
   --tab-corner-rounding: 6px;
   --animation-speed: 0.2s;
+	--t
 }
 
 /* Rounded bottom corners */
@@ -140,3 +141,27 @@ tab:hover::after {
 #navigator-toolbox {
   --tabs-border-color: transparent !important;
 }
+
+/* #nav-bar {
+	box-shadow: 0 -1px 0 0 var(--chrome-content-separator-color) !important;
+}
+tab[visuallyselected] .tab-background {
+	border: 1px solid var(--chrome-content-separator-color) !important;
+}
+#nav-bar {
+	box-shadow: 0 -1px 0 0 var(--chrome-content-separator-color) !important;
+}
+tab[visuallyselected] .tab-background {
+	border: 1px solid var(--chrome-content-separator-color) !important;
+}
+tab[visuallyselected] .tab-background::before {
+		border-right: 1px solid var(--chrome-content-separator-color) !important;
+		border-bottom: 1px solid var(--chrome-content-separator-color) !important;
+}
+tab[visuallyselected] .tab-background::after {
+		border-left: 1px solid var(--chrome-content-separator-color) !important;
+		border-bottom: 1px solid var(--chrome-content-separator-color) !important;
+} */
+/* tab[visuallyselected] .tab-background::before {
+    transform: translateX(calc(-1 * (var(--tab-corner-rounding) + 1px))) !important;
+} */
