@@ -1,6 +1,4 @@
-@import "icons/icons.css";
-@import "nice-tabs.css";
-@import "urlbar_connection_type_colors.css";
+/* @import "icons/icons.css"; */
 
 /* Scrolling Bookmarks */
 /* Adapted from: https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/multi-row_bookmarks.css */
@@ -44,63 +42,17 @@
 	opacity: .1 !important;
 }
 
-/* Nice adaptive container line rounding + Taller container lines */
-
-.tab-bottom-line {
-  height: 5px !important;
-  border-radius: 2.5px;
-  margin: 0 9px 1px 9px !important;
-  background-color: var(--identity-tab-color) !important;
-  transition: 0.1s;
-}
-
-#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([selected]) .tab-bottom-line {
-  border-radius: 5px 5px 0 0;
-	transition: 0.1s;
-}
-
 /* 0 left & right padding around bookmarks bar + 3px bottom to match above */
 
 #PersonalToolbar {
   padding: 0 0 3px 0 !important;
 }
 
-/* Back button styling */
-
-:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
-  height: 28px !important;
-  width: 28px !important;
-  padding: 0 6px !important;
-  --panel-disabled-color: rgba(7, 7, 7, 0.5);
-  background-color: transparent !important;
-  border: 0 !important;
-  transition: background-color var(--animation-speed) !important;
-}
-
-:root:not([uidensity="compact"]) #back-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
-  background-color: var(--toolbarbutton-hover-background) !important;
-  box-shadow: none !important;
-}
-
-:root:not([uidensity="compact"]) #back-button[open] > .toolbarbutton-icon {
-  background-color: var(--toolbarbutton-active-background) !important;
-}
-
-:root:not([uidensity="touch"]):not([uidensity="compact"]) #back-button {
-  margin-top: -1px !important;
-  margin-bottom: -1px !important;
-}
-
-/* Round alternate seach options */
+/* Round alternate search options and reduce padding */
 
 .searchbar-engine-one-off-item {
 	border-radius: 100% !important;
-}
-
-/* increased rounding on suggestions */
-
-.urlbarView-row {
-	border-radius: 3px !important;
+	margin: 0 4px 0 4px !important;
 }
 
 /* Rounded favicons (and bookmarks) */
@@ -122,52 +74,6 @@
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Background tab hover color */
-
-.tabbrowser-tab:not([selected]):hover .tab-background {
-	/* background-color: rgba(256,256,256,0.2) !important; */
-	background-color: var(--tab-line-color) !important;
-}
-
-/* Remove separator between extenstions and menu button */
-
-#PanelUI-button {
-	margin-left: -5px !important;
-	border-image-slice: 0 !important;
-}
-
-/* Rounded Buttons */
-
-/* #reload-button, */
-.toolbarbutton-badge-stack,
-.toolbarbutton-animatable-box,
-#back-button .toolbarbutton-icon,
-#forward-button .toolbarbutton-icon,
-#developer-button .toolbarbutton-icon,
-#nav-bar-overflow-button .toolbarbutton-icon {
-	border-radius: 99px !important;
-  transition: 0.1s !important;
-}
-
-/* New-tab button styling */
-
-#tabs-newtab-button .toolbarbutton-icon {
-	/* background-color: rgba(256,256,256,0.1) !important; */
-	background-color: var(--tab-line-color) !important;
-	border-radius: 99px !important;
-	transition: 0.1s !important;
-}
-
-#tabs-newtab-button:hover .toolbarbutton-icon {
-	/* background-color: rgba(256,256,256,0.2) !important; */
-	background-color: var(--tab-line-color) !important;
-}
-
-#tabs-newtab-button {
-	padding-left: 5px !important;
-	padding-right: 5px !important;
-}
-
 /* Custom tooltip style */
 
 tooltip {
@@ -178,29 +84,11 @@ tooltip {
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
 }
 
-/* Add padding above tabs in fullscreen */
-
-#navigator-toolbox[inFullscreen="true"] #TabsToolbar {
-  padding-top: 10px !important;
-}
-
-/* Line between toolbox and the content */
-
-/* #PersonalToolbar {
-  margin-bottom: -0.5px;
-} */
-
 /* Hide search dropdown */
 
-.urlbar-history-dropmarker {
+/* .urlbar-history-dropmarker {
   display: none;
-}
-
-/* Custom add-ons icons */
-
-toolbarbutton#support_lastpass_com-browser-action  {
-  list-style-image: url("icons/last.png") !important;
-}
+} */
 
 /* Bookmarks bar extra padding like chrome */
 
@@ -208,32 +96,11 @@ toolbarbutton#support_lastpass_com-browser-action  {
 	padding: 6px !important;
 }
 
-/* Hides the tab line */
-
-.tab-line {
-	display: none;
-}
-
 /* Stop Tab overflow */
 
 .tabbrowser-tab {
   min-width: 1em !important;
   clip-width: 1em !important;
-}
-
-/* Nice Close tab button */
-
-.tab-close-button {
-	width: 16px !important;
-	height: 16px !important;
-	border-radius: 99px !important;
-	transition-duration: 1s !important;
-}
-
-/* Align first tab to urlbar */
-
-.titlebar-spacer[type="pre-tabs"] {
-  width: 30px !important;
 }
 
 /* If window < 800px wide, no spacers before and after tabs */
@@ -247,37 +114,46 @@ toolbarbutton#support_lastpass_com-browser-action  {
 	}
 }
 
-/* Url bar styles */
-
-#urlbar-background {
-  box-shadow: none !important;
-  overflow: hidden !important;
-  font-size: 14px !important;
-  border-radius: 6px !important;
-}
-
-/* Hides urlbar border when it isn't focused */
-
-#urlbar[breakout]:not([open]):not([focused]) #urlbar-background {
-  border-color: var(--lwt-toolbar-field-background-color) !important;
-}
-
-/* Make urlbar appear more compact */
+/* Make expanded urlbar more compact */
 
 #urlbar[breakout]{
-  margin-inline-start: 0px !important;
   width: 100% !important;
   left: 0 !important;
   top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
 }
 
-#urlbar[breakout]:not([open]){ bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important; }
-.urlbarView { margin-inline: 0 !important; width: auto !important; }
-.urlbarView-row { padding: 0 2px !important; }
-.urlbarView-row-inner { padding-inline-start: 4px !important; }
-#urlbar-background { animation: none !important; }
-#urlbar-input-container { padding: 0 !important; height: 100% !important; }
-#identity-box { padding-block: var(--urlbar-icon-padding) }
+/* #urlbar[breakout]:not([open]){
+	bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+} */
+
+.urlbarView {
+	margin-inline: 0 !important; width: auto !important;
+}
+
+.urlbarView-row {
+	padding: 0 2px !important;
+}
+
+.urlbarView-row-inner {
+	padding-inline-start: 4px !important;
+}
+
+#urlbar-background {
+	animation: none !important;
+}
+
+#urlbar-input-container {
+	padding: 0 !important;
+	height: 100% !important;
+}
+
+#urlbar[breakout-extend="true"] #urlbar-input-container {
+	padding-top: 1px !important;
+}
+
+#identity-box {
+	padding-block: var(--urlbar-icon-padding)
+}
 
 /* Shrinks padding around 'This time, search with' area */
 
